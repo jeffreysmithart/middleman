@@ -10,12 +10,16 @@
   rel='stylesheet' type='text/css'>
   </head>
   <body>
-    
-    <div id="main" role="main">
+    <header class="main-header">
+    <%= partial "partials/nav" %>
+  </header>
+   <div class="main-content"> 
+    <div id="main" role="main" class="large-column">
+      
       <%= yield %>
     </div>
     
-    <aside>
+    <aside class="small-column">
       <h2>Recent Articles</h2>
       <ol>
         <% blog.articles[0...10].each do |article| %>
@@ -37,5 +41,7 @@
         <% end %>
       </ol>
     </aside>
+  </div>
+    <%= partial "partials/footer" %>
   </body>
 </html>
